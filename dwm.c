@@ -233,6 +233,7 @@ static void resizerequest(XEvent *e);
 static void restack(Monitor *m);
 static void run(void);
 static void scan(void);
+void self_restart(const Arg *arg);
 static int sendevent(Window w, Atom proto, int m, long d0, long d1, long d2, long d3, long d4);
 static void sendmon(Client *c, Monitor *m);
 static void setclientstate(Client *c, long state);
@@ -1775,7 +1776,8 @@ setup(void)
 	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
 	lrpad = drw->fonts->h;
-	bh = drw->fonts->h + 2;
+	//bh = drw->fonts->h + 2;
+	bh = drw->fonts->h + 4;
 	updategeom();
 	/* init atoms */
 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);
@@ -2672,6 +2674,17 @@ zoom(const Arg *arg)
 		if (!c || !(c = nexttiled(c->next)))
 			return;
 	pop(c);
+}
+
+void self_restart(const Arg *arg) {
+    char *const argv[] = {"/usr/local/bin/dwm", NULL};
+
+    /* FILE* fp = log_fp(); */
+    /* fprintf(fp, "Attempting self restart \n"); */
+    /* fprintf(fp, "Target: %s\n", argv[0]); */
+    execv(argv[0], argv);
+    /* fprintf(fp, "dwm selfrestart: execv %s", argv[0]); */
+	/* fprintf(log_fp(), "Reason: %s\n", strerror(errno));	 */
 }
 
 int
