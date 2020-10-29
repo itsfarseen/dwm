@@ -10,7 +10,6 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-// static const char *fonts[]          = { "Liberation Mono:size=7" };
 static const char *fonts[]          = { "Roboto Condensed:size=8" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#282C34";
@@ -90,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
+	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
 	{ MODKEY, 			            XK_f,      fullscreen,     {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
