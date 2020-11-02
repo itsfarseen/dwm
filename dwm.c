@@ -206,6 +206,7 @@ static void focus(Client *c);
 static void focusin(XEvent *e);
 static void focusmon(const Arg *arg);
 static void focusstack(const Arg *arg);
+static void focusstacktop(const Arg *arg);
 static Atom getatomprop(Client *c, Atom prop);
 static int getrootptr(int *x, int *y);
 static long getstate(Window w);
@@ -2843,6 +2844,18 @@ focusmaster(const Arg *arg)
 		return;
 
 	c = nexttiled(selmon->clients);
+
+	if (c)
+		focus(c);
+}
+
+void
+focusstacktop(const Arg *arg)
+{
+	Client *c;
+
+	c = nexttiled(selmon->clients);
+	c = nexttiled(c->next);
 
 	if (c)
 		focus(c);

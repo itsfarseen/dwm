@@ -78,7 +78,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      focusmaster,    {0} },        /* h focus master on left */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } }, /* l focus stack on right */
+	{ MODKEY,                       XK_l,      focusstacktop,  {0} }, 		 /* l focus stack top on right */
 	{ MODKEY,                       XK_semicolon,  incnmaster, {.i = +1 } },
 	{ MODKEY,                       XK_apostrophe, incnmaster, {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h, 	   setmfact,   	   {.f = -0.05} },
