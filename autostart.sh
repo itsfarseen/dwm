@@ -14,3 +14,5 @@ single_instance firefox
 single_instance notion-app
 single_instance dwm-status $HOME/.config/dwm-status.toml
 single_instance sxhkd
+single_instance nm-applet
+single_instance syncthingtray
