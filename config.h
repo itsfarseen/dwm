@@ -37,6 +37,9 @@ static const Rule rules[] = {
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "st-256color",
 				 NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,      NULL,     "Emulator",     0,         1,          0,           1,        -1 }, /* Android emulator */
+	{ NULL,      NULL,     "Extended controls - ",
+										   0,         1,          0,           1,        -1 }, /* Android emulator settings */
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
